@@ -24,3 +24,12 @@ install.packages("writexl")
 
 # Load the library
 library(writexl)
+
+
+The dplyr package is one of the most popular and widely used R packages for data manipulation.
+
+# Install the package (only if not installed already)
+install.packages("dplyr")
+
+# Load the package
+library(dplyr)             
