@@ -20,9 +20,14 @@ data[3, "Age"]
 data$Department <- c("HR", "IT", "Finance")
 print(data)
 
+filtered_data <- subset(data, Age > 28)
+print(filtered_data)
+
 # Remove the first row and column
 New <- data[-c(1), -c(1)]
 New
 
 dim(data)
+
+summary(data)
 
