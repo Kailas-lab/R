@@ -30,6 +30,16 @@ The dplyr package is one of the most popular and widely used R packages for data
 
 # Install the package (only if not installed already)
 install.packages("dplyr")
-
+s
 # Load the package
-library(dplyr)             
+library(dplyr) 
+
+# Available parameter values for lty:
+
+0 removes the line
+1 displays a solid line
+2 displays a dashed line
+3 displays a dotted line
+4 displays a "dot dashed" line
+5 displays a "long dashed" line
+6 displays a "two dashed" line
