@@ -105,4 +105,31 @@ quantile(ages, probs = c(0.25, 0.50, 0.75))
 Summary of Results
 Q1 (25th percentile): 29.25
 Q2 (50th percentile): 42.50
-Q3 (75th percentile): 56.25
+Q3 (75th percentile): 56.25l
+
+
+# Using R in Python
+You can use the rpy2 package to integrate R within Python.
+
+Installation
+
+pip install rpy2
+
+# Set the R_HOME Environment Variable
+Set the R_HOME environment variable to the directory path you found.
+
+On Windows:
+
+Open "Environment Variables" settings:
+Right-click "This PC" > "Properties" > "Advanced System Settings" > "Environment Variables".
+Click "New" under "System Variables".
+Add:
+Variable Name: R_HOME
+Variable Value: C:\Program Files\R\R-x.x.x (your R path)
+Click "OK" and restart your terminal.
+
+# Using Python in R
+You can use the reticulate package in R to integrate Python within R.
+
+install.packages("reticulate")
+library(reticulate)
