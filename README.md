@@ -43,3 +43,66 @@ library(dplyr)
 4 displays a "dot dashed" line
 5 displays a "long dashed" line
 6 displays a "two dashed" line
+
+# Logic Behind Percentile Calculation
+To compute percentiles (and quartiles):
+
+Sort the data: Arrange the values in ascending order.
+Find the rank: For a given percentile 
+𝑃
+P, calculate the rank position:
+Rank
+=𝑃×(𝑛+1)
+Rank=P×(n+1)
+where 
+𝑛
+n is the number of data points.
+Interpolate if necessary: If the rank is not an integer, interpolate between the nearest ranks.
+
+3. Example Calculation
+Dataset
+
+ages <- c(23, 27, 30, 34, 40, 45, 50, 55, 60, 65)
+
+Step 1: Sort the Data
+The data is already sorted:
+
+
+[23,27,30,34,40,45,50,55,60,65]
+
+Step 2: Calculate Q1 (25th Percentile)
+
+P=0.25, 
+
+n=10
+
+Compute rank:
+
+Rank
+=0.25×(10+1)
+=2.75
+Rank=0.25×(10+1)=2.75
+The 2.75th value is between the 2nd and 3rd values (27 and 30).
+Interpolate:
+
+𝑄1
+
+=1st rank + [P(take values after decimal) * (2nd rank - 1st rank)]
+
+=27+[0.75×(30−27)]
+=27+2.25
+=29.25
+
+Q1=27+0.75×(30−27)=27+2.25=29.25
+
+
+4. How It Works in R
+The quantile() function performs the steps above automatically:
+
+R
+Copy code
+quantile(ages, probs = c(0.25, 0.50, 0.75))
+Summary of Results
+Q1 (25th percentile): 29.25
+Q2 (50th percentile): 42.50
+Q3 (75th percentile): 56.25
